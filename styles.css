@@ -1,0 +1,138 @@
+*{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+body{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+nav{
+  background: #BD4B4B;
+  height: 80px;
+  width: 100%;
+}
+label.logo{
+  color: white;
+  font-size: 35px;
+  line-height: 80px;
+  padding: 0 80px;
+  font-weight: bold;
+}
+nav ul{
+  float: right;
+  margin-right: 20px;
+}
+
+nav ul li{
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+  
+}
+
+nav ul li a{
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+a.active,a:hover{
+  background: #DE8971;
+  transition: .5s;
+}
+.checkbtn{
+  font-size: 30px;
+  color: white;
+  float: right;
+  padding: right;
+  line-height: 80px;
+  margin-right: 40px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+#check{
+  display: none;
+}
+
+
+
+section{
+  background: url(Picture1.jpg) no-repeat;
+  background-size: cover;
+  height: calc(100vh - 80px);
+}
+section .tengah {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 5vw;
+}
+h1{
+  font-size: 6vw;
+  color: white;
+  padding-top: 80px;
+}
+h2{
+  font-size: 5vw;
+  color: #F5C0C0;
+}
+p{
+  font-size: 3vw;
+  color: #F6E6E4;
+}
+
+input{
+  display: block;
+  position: absolute;
+  z-index: 2;
+  transform: scale(2.1);
+
+}
+
+@media (max-width: 1240px){
+  label.logo{
+    font-size: 30px;
+    padding-left: 50px;
+  }
+  nav ul li a{
+    font-size: 16px;
+  }
+}
+@media (max-width: 1240px){
+  nav .left-side .hamburger span{
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 6px;
+  }
+  ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+  }
+  #check:checked ~ul{
+    left: 0;
+  }
+  nav ul li{
+    display: block;
+
+  }
+  nav ul li a{
+    font-size: 20px;
+  }
+  a:hover,a.active{
+    background: none;
+    color: #0082e6;
+  }
+  
+}
