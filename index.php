@@ -174,6 +174,7 @@ if(isset($_POST['decrypt'])){
 
 			$cipher_id = 'ciphertext';
     		$cipher_key = $_POST['ciphertext'];
+		echo $cipher_key;
 			$header_id = 'X-Vault-Token';
 
 			$header_key = $token_client['auth']['client_token'];
