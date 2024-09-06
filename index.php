@@ -172,8 +172,8 @@ if(isset($_POST['decrypt'])){
 
 			curl_close ($ch);
 
-			$site_id = 'ciphertext';
-    		$api_key = $_POST['ciphertext'];
+			$cipher_id = 'ciphertext';
+    		$cipher_key = $_POST['ciphertext'];
 			$header_id = 'X-Vault-Token';
 
 			$header_key = $token_client['auth']['client_token'];
@@ -192,7 +192,7 @@ if(isset($_POST['decrypt'])){
     		// curl_setopt($ch, CURLOPT_POSTFIELDS, "$site_id=$api_key" );
 
     		//or if they have asked for raw post
-    		curl_setopt($ch1, CURLOPT_POSTFIELDS, "$site_id=$api_key" );
+    		curl_setopt($ch1, CURLOPT_POSTFIELDS, "$cipher_id=$cipher_key" );
 
     		####################################################################
 
@@ -206,7 +206,7 @@ if(isset($_POST['decrypt'])){
 			
 
 			// echo $api_response;
-    		curl_close ($ch);
+    		curl_close ($ch1);
 
 			?>
 
