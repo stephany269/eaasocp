@@ -45,8 +45,7 @@
 
 $role_id = getenv('role_id_app01');
 $secret_id = getenv('secret_id_app01');
-// $role_id="686510e7-b6bd-b6c6-0b31-c5d069f8231b";
-// $secret_id="f8e4eeaf-9d14-5a1b-221c-48d3df470ec4";
+
 if(isset($_POST['encrypt'])){
     
         if (empty($_POST['plaintext']) )
@@ -92,7 +91,7 @@ if(isset($_POST['encrypt'])){
 			// echo $header_key;
 
     		$ch1 = curl_init();
-    		curl_setopt($ch1, CURLOPT_URL, 'https://10.20.213.161:8200/v1/transit/encrypt/BCA-DEV-EMATERAI');
+    		curl_setopt($ch1, CURLOPT_URL, 'https://10.20.213.161:8200/v1/transit/encrypt/DEV-OPENSHIFT');
     		curl_setopt($ch1, CURLOPT_POST, 1);
 			curl_setopt($ch1, CURLOPT_SSL_VERIFYHOST, 0);
 			curl_setopt($ch1, CURLOPT_SSL_VERIFYPEER, 0);
@@ -133,8 +132,6 @@ if(isset($_POST['encrypt'])){
 }
 $role_id = getenv('role_id_app01');
 $secret_id = getenv('secret_id_app01');
-// $role_id="686510e7-b6bd-b6c6-0b31-c5d069f8231b";
-// $secret_id="f8e4eeaf-9d14-5a1b-221c-48d3df470ec4";
 
 if(isset($_POST['decrypt'])){
     
@@ -172,10 +169,8 @@ if(isset($_POST['decrypt'])){
 
 			curl_close ($ch);
 
-			$cipher_id = 'ciphertext';
-    		$cipher_key = $_POST['ciphertext'];
-		echo $cipher_key;
-		
+			$site_id = 'ciphertext';
+    		$api_key = $_POST['ciphertext'];
 			$header_id = 'X-Vault-Token';
 
 			$header_key = $token_client['auth']['client_token'];
@@ -183,7 +178,7 @@ if(isset($_POST['decrypt'])){
 			// echo $header_key;
 
     		$ch1 = curl_init();
-    		curl_setopt($ch1, CURLOPT_URL, 'https://10.20.213.161:8200/v1/transit/decrypt/BCA-DEV-EMATERAI');
+    		curl_setopt($ch1, CURLOPT_URL, 'https://10.20.213.161:8200/v1/transit/decrypt/DEV-OPENSHIFT');
     		curl_setopt($ch1, CURLOPT_POST, 1);
 			curl_setopt($ch1, CURLOPT_SSL_VERIFYHOST, 0);
 			curl_setopt($ch1, CURLOPT_SSL_VERIFYPEER, 0);
@@ -194,7 +189,7 @@ if(isset($_POST['decrypt'])){
     		// curl_setopt($ch, CURLOPT_POSTFIELDS, "$site_id=$api_key" );
 
     		//or if they have asked for raw post
-    		curl_setopt($ch1, CURLOPT_POSTFIELDS, "$cipher_id=$cipher_key" );
+    		curl_setopt($ch1, CURLOPT_POSTFIELDS, "$site_id=$api_key" );
 
     		####################################################################
 
@@ -208,7 +203,7 @@ if(isset($_POST['decrypt'])){
 			
 
 			// echo $api_response;
-    		curl_close ($ch1);
+    		curl_close ($ch);
 
 			?>
 
