@@ -203,7 +203,7 @@ if(isset($_POST['decrypt'])){
 			
 
 			// echo $api_response;
-    		curl_close ($ch);
+    		curl_close ($ch1);
 
 			?>
 
